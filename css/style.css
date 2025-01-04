@@ -1,0 +1,850 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@font-face {
+    font-family: 'UTM Cookies';
+    src: url('fonts/UTM Cookies.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'SFU Futura Pro';
+    src: url('fonts/UTM Centur.ttf') format('truetype'); /* Đảm bảo đường dẫn đúng với vị trí tệp font */
+}
+h1 {
+    font-family: 'UTM Cookies', sans-serif;
+    font-size: 20px;
+    color: #5B62B3;
+}
+h2 {
+    font-family: 'UTM Cookies', sans-serif;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+h3 {
+    font-family: 'UTM Cookies', sans-serif;
+    font-size: 20px;
+    color: #241811;
+}
+p {
+    font-family: 'UTM Centur', sans-serif;
+    font-size: 13px;
+    color: #0b0808;
+}
+body {
+    background-color: #0b0808 !important;
+}
+/* Thiết lập cho container1 */
+.container1 {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px; /* Khoảng cách mặc định giữa nội dung và lề */
+    max-width: 1200px; /* Định nghĩa chiều rộng tối đa cho màn hình lớn */
+}
+/* Đối với thiết bị nhỏ */
+@media (max-width: 576px) {
+    .container1 {
+        padding: 20px; /* Full màn hình trên thiết bị nhỏ */
+    }
+}
+#navbar-example2 {
+    position: sticky;
+    top: 0; /* Cố định thanh ở trên cùng */
+    z-index: 1020; /* Đảm bảo thanh menu luôn trên các phần tử khác */
+    width: 100%; /* Đảm bảo thanh menu chiếm toàn bộ chiều ngang */
+}
+.container-fluid {
+    padding: 0; /* Loại bỏ padding mặc định của Bootstrap nếu cần */
+}
+#navbar-example2 {
+    padding-left: 20px; /* Thụt vào từ bên trái */
+    padding-right: 20px; /* Thụt vào từ bên phải */
+}
+/* Đổi màu nền của thanh navbar */
+#navbar-example2 {
+    background-color: #FEDB8A !important; /* Màu nền của navbar */
+}
+/* Đổi màu chữ cho các liên kết và thương hiệu */
+#navbar-example2 .navbar-brand, #navbar-example2 .nav-link, #navbar-example2 .dropdown-item {
+    color: #0b0808 !important; /* Màu chữ */
+}
+/* Thay đổi màu chữ khi hover */
+#navbar-example2 .nav-link:hover, #navbar-example2 .dropdown-item:hover {
+    color: #FCB527 !important; /* Màu khác khi di chuột qua */
+}
+/* Xóa màu nền mặc định của các liên kết khi được chọn (nếu cần) */
+#navbar-example2 .nav-link.active {
+    background-color: transparent !important; /* Không có màu nền */
+    color: #0b0808; /* Giữ màu chữ chính */
+}
+/* Thêm khung viền khi bấm vào liên kết */
+#navbar-example2 .nav-link:focus, #navbar-example2 .dropdown-item:focus {
+    outline: 2px solid #FEDB8A; /* Viền màu xanh */
+    border-radius: 6px; /* Làm bo góc viền */
+    background-color: #5B62B3; /* Màu nền nhạt khi focus (nếu cần) */
+    color: #FEDB8A;
+}
+.navbar-brand {
+    margin-left: 10px; /* Căn chỉnh thương hiệu thêm thụt vào */
+}
+.nav-pills {
+    margin-right: 10px; /* Căn chỉnh các mục trong danh sách thêm thụt vào */
+}
+/* buoi 3 */
+.timeline {
+    list-style: none;
+    padding: 30px 0 30px;
+    position: relative;
+}
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: #eeeeee;
+    left: 50%;
+    margin-left: -1.5px;
+}
+.timeline > li {
+    margin-bottom: 20px;
+    position: relative;
+}
+.timeline > li:before, .timeline > li:after {
+    content: " ";
+    display: table;
+}
+.timeline > li:after {
+    clear: both;
+}
+.timeline > li:before, .timeline > li:after {
+    content: " ";
+    display: table;
+}
+.timeline > li:after {
+    clear: both;
+}
+.timeline > li > .timeline-panel {
+    width: 46%;
+    float: left;
+    border: 1px solid #d4d4d4;
+    /*border-radius: 2px;*/
+    /*padding: 20px;*/
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+/* Mũi tên bên trái (mặc định) */
+.timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #fff; /* Màu trắng */
+    border-right: 0 solid transparent;
+    border-bottom: 15px solid transparent;
+    content: " ";
+}
+.timeline > li > .timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff; /* Màu trắng */
+    border-right: 0 solid transparent;
+    border-bottom: 14px solid transparent;
+    content: " ";
+}
+/* Mũi tên bên phải (timeline-inverted) */
+.timeline > li.timeline-inverted > .timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    left: -15px; /* Đặt mũi tên ở bên trái */
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-right: 15px solid #fff; /* Màu trắng */
+    border-left: 0 solid transparent;
+    border-bottom: 15px solid transparent;
+    content: " ";
+}
+.timeline > li.timeline-inverted > .timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    left: -14px; /* Đặt mũi tên ở bên trái */
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-right: 14px solid #fff; /* Màu trắng */
+    border-left: 0 solid transparent;
+    border-bottom: 14px solid transparent;
+    content: " ";
+}
+.timeline > li > .timeline-badge {
+    color: #FFFFFF;
+    width: 24px;
+    height: 24px;
+    line-height: 50%;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 20px;
+    left: 60%;
+    margin-left: 0px;
+    background-color: #FFFFFF;
+    z-index: 100;
+    /*
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  */
+}
+.timeline > li.timeline-inverted > .timeline-panel {
+    float: right;
+}
+.timeline > li.timeline-inverted > .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+}
+.timeline > li.timeline-inverted > .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+}
+.timeline-badge > a {
+    color: #C5C7C5 !important;
+}
+.timeline-badge a:hover {
+    color: #FF531F !important;
+}
+.timeline-title {
+    margin-top: 0;
+    color: inherit;
+}
+.timeline-body > p, .timeline-body > ul {
+    padding: 20px;
+    margin-bottom: 0;
+}
+.timeline-body > p + p {
+    margin-top: 5px;
+}
+.timeline-footer {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.timeline-footer > a {
+    cursor: pointer;
+    text-decoration: none;
+}
+.tooltip {
+    position: absolute;
+    z-index: 1020;
+    display: block;
+    visibility: visible;
+    padding: 5px;
+    font-size: 11px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.tooltip.in {
+    /*opacity:0;
+    filter:alpha(opacity=80);*/
+}
+.tooltip.top {
+    margin-top: -2px;
+}
+.tooltip.right {
+    margin-left: 2px;
+}
+.tooltip.bottom {
+    margin-top: 2px;
+}
+.tooltip.left {
+    margin-left: -2px;
+}
+.tooltip.top .tooltip-arrow {
+    bottom: 0;
+    left: 0;
+    margin-left: 0;
+    border-left: 0 solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 0 solid #000;
+}
+.tooltip.left .tooltip-arrow {
+    bottom: 0;
+    left: 0;
+    margin-left: 0;
+    border-left: 0 solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 0 solid #000;
+}
+.tooltip.bottom .tooltip-arrow {
+    bottom: 0;
+    left: 0;
+    margin-left: 0;
+    border-left: 0 solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 0 solid #000;
+}
+.tooltip.right .tooltip-arrow {
+    bottom: 0;
+    left: 0;
+    margin-left: 0;
+    border-left: 0 solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 0 solid #000;
+}
+.tooltip-inner {
+    width: 200px;
+    padding: 3px 8px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF531F;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+/* CSS chung */
+body {
+    background-color: #7B7B7B;
+}
+#timeline {
+    margin-bottom: 80px;
+}
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    list-style: none;
+}
+.timeline:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%; /* Cột giữa */
+    width: 2px;
+    background: #ddd;
+}
+.timeline > li {
+    position: relative;
+    margin-bottom: -100px;
+}
+.timeline > li > .timeline-badge {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+    background-color: #FEDB8A;
+    border-radius: 50%;
+    z-index: 100;
+}
+.timeline > li > .timeline-panel {
+    position: relative;
+    width: 40%;
+    float: left;
+    padding: 15px;
+    border-radius: 5px;
+    background: #FEDB8A;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.timeline > li:nth-child(even) > .timeline-panel {
+    float: right;
+}
+/* Mũi tên */
+.timeline > li > .timeline-panel:before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+.timeline > li:nth-child(odd) > .timeline-panel:before {
+    left: 100%;
+    border-width: 20px 0 20px 20px;
+    border-color: transparent transparent transparent #000;
+}
+.timeline > li:nth-child(even) > .timeline-panel:before {
+    right: 100%;
+    border-width: 20px 20px 20px 0;
+    border-color: transparent #000 transparent transparent;
+}
+.timeline-year {
+    font-weight: bold;
+    color: #A0522D;
+    margin-bottom: 10px;
+}
+.toggle-content {
+    display: none;
+}
+/* Điều chỉnh cho màn hình nhỏ hơn 768px */
+@media (max-width: 768px) {
+    .timeline:before {
+        left: 10%; /* Cột timeline dịch sang bên trái */
+    }
+    .timeline > li > .timeline-panel {
+        float: right; /* Panels nằm bên phải */
+        width: 80%; /* Tăng chiều rộng cho màn hình nhỏ */
+        margin-right: 0; /* Xóa khoảng cách thừa */
+    }
+    .timeline > li:nth-child(even) > .timeline-panel {
+        float: right; /* Cả mục chẵn cũng nằm bên phải */
+    }
+    .timeline > li > .timeline-badge {
+        left: 10%; /* Badge nằm bên trái cùng với cột */
+    }
+    /* Mũi tên điều chỉnh theo vị trí mới */
+    .timeline > li > .timeline-panel:before {
+        content: '';
+        left: auto;
+        right: 100%; /* Mũi tên nằm bên trái của panel */
+        border-width: 20px 20px 20px 0;
+        border-color: transparent #000 transparent transparent;
+    }
+}
+h1 {
+    margin: 0;
+    font-size: 3em; /* Kích thước chữ */
+    color: #C57838; /* Màu chữ */
+}
+#typing-container {
+    display: flex;
+    justify-content: center; /* Căn giữa nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    /* Bỏ thuộc tính nền */
+}
+#typing-effect {
+    color: black; /* Màu chữ (hoặc tùy chỉnh theo ý muốn) */
+    white-space: nowrap; /* Ngăn xuống dòng */
+}
+/* Tùy chỉnh con trỏ của Typed.js */
+.typed-cursor {
+    color: white; /* Màu con trỏ (hoặc tùy chỉnh theo ý muốn) */
+    font-size: 3rem; /* Kích thước con trỏ phù hợp với chữ */
+    display: inline; /* Đảm bảo con trỏ nằm cùng dòng với chữ */
+}
+.image-container {
+    display: flex; /* Dùng flexbox để căn giữa */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    margin-bottom: 20px; /* Chiều cao toàn màn hình */
+}
+.image-container img {
+    width: auto; /* Mặc định không thay đổi kích thước */
+    max-width: 100%; /* Không vượt quá chiều rộng container */
+    height: auto; /* Đảm bảo tỷ lệ hình ảnh */
+}
+@media (max-width: 768px) { /* Khi màn hình nhỏ hơn 768px (điện thoại, tablet) */
+    .image-container img {
+        width: 80%; /* Hình ảnh full màn hình */
+    }
+}
+.bg-info {
+    background-color: #0b0808 !important;
+    color: white;
+}
+.container.bg-light {
+    background-color: #6A2125 !important;
+}
+.progress-wrapper p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.progress {
+    height: 20px; /* Chiều cao của thanh tiến trình */
+    background-color: #F5F5F5; /* Màu nền của thanh */
+    border-radius: 10px; /* Bo góc */
+    overflow: hidden; /* Ẩn phần dư */
+}
+.progress-bar {
+    background-color: #FEDB8A; /* Màu của thanh tiến trình */
+    height: 100%; /* Chiều cao full của thanh */
+    text-align: center; /* Căn chữ giữa */
+    color: #000; /* Màu chữ */
+    font-weight: bold; /* Chữ đậm */
+}
+/* Change button color */
+.nav-link {
+    background-color: #FEDB8A;
+    color: white; /* Adjust text color as needed */
+}
+.nav-link:hover {
+    background-color: #f8c165; /* Slightly darker shade for hover */
+    color: white;
+}
+/* Loại bỏ màu xanh của nút khi active */
+.nav-link.active {
+    background-color: #FEDB8A !important; /* Giữ màu nền vàng như yêu cầu */
+    color: white !important; /* Giữ màu chữ đen */
+    border-color: transparent !important; /* Bỏ viền mặc định */
+}
+/* Loại bỏ màu xanh của nút khi hover */
+.nav-link:hover {
+    background-color: #f8c165 !important; /* Giữ màu nền hơi tối khi hover */
+    color: white !important; /* Đổi màu chữ khi hover */
+    border-color: transparent !important; /* Bỏ viền mặc định */
+}
+/* Loại bỏ màu xanh của nút khi focus */
+.nav-link:focus {
+    background-color: #FEDB8A !important; /* Giữ màu nền vàng khi focus */
+    color: black !important; /* Giữ màu chữ đen khi focus */
+    box-shadow: none !important; /* Loại bỏ bóng focus mặc định */
+    border-color: transparent !important; /* Bỏ viền focus mặc định */
+}
+/* Căn giữa các cột */
+.row.justify-content-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* Chỉnh sửa hình ảnh và đảm bảo không vượt ra ngoài màn hình */
+.img-hover-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px; /* Thêm bo góc cho hình ảnh */
+    object-fit: cover; /* Đảm bảo hình ảnh đầy đủ trong khung */
+}
+/* Định dạng nút "Xem Chi Tiết" */
+.img-hover-container .detail-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 15px;
+    background-color: #FEDB8A;
+    color: black;
+    text-decoration: none;
+    border: 2px solid #FEDB8A; /* Khung vàng cho nút */
+    border-radius: 5px;
+    display: none; /* Ẩn nút mặc định */
+}
+/* Hiển thị nút khi hover */
+.img-hover-container:hover .detail-button {
+    display: block;
+}
+/* Loại bỏ gạch dưới cho nút */
+.img-hover-container .detail-button:hover {
+    text-decoration: none;
+}
+/* Đảm bảo hình ảnh không bị lố ra ngoài */
+.container {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* Căn giữa các cột */
+.row.justify-content-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+/* Đảm bảo các hình ảnh có khung, và nút có thể hiển thị cho tất cả các hình ảnh */
+.img-hover-container {
+    position: relative;
+}
+.img-hover-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.detail-button {
+    position: absolute;
+    bottom: 20px; /* Nâng nút lên một chút */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 15px;
+    background-color: #FEDB8A;
+    color: black;
+    text-decoration: none;
+    border: 2px solid #FEDB8A;
+    border-radius: 5px;
+    display: none; /* Mặc định ẩn nút */
+}
+.img-hover-container:hover .detail-button {
+    display: block; /* Hiển thị nút khi hover */
+}
+.detail-button:hover {
+    text-decoration: none;
+}
+/* Cuộn mượt */
+html {
+    scroll-behavior: smooth;
+}
+/* Điều chỉnh padding cho các phần */
+section {
+    padding-top: 60px; /* Đảm bảo phần nội dung không bị ẩn dưới menu cố định */
+}
+/* Navbar cố định */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    z-index: 1000;
+}
+.navbar-brand h1 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+}
+.navbar-nav .nav-item .nav-link {
+    color: #333;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+}
+.nav-link:hover {
+    color: #007bff;
+}
+/* Hiệu ứng cuộn */
+.navbar-nav .nav-item .nav-link.active {
+    color: #007bff;
+}
+/* Đảm bảo rằng các section có margin-top và padding-top hợp lý */
+section {
+    margin-top: 20px; /* Giảm khoảng cách nếu cần */
+    padding-top: 60px; /* Đảm bảo không bị che khuất bởi navbar */
+}
+/* Điều chỉnh thêm cho mỗi section cụ thể */
+#scrollspyHeading4 {
+    margin-top: 30px; /* Dự án */
+}
+#scrollspyHeading3 {
+    margin-top: 30px; /* Kinh nghiệm */
+}
+/* Tab content */
+.tab-content {
+    margin-top: 20px;
+}
+/* Timeline */
+.timeline {
+    margin-top: 30px;
+}
+/* Đảm bảo các phần không bị lệch quá xa nhau */
+.container {
+    margin-bottom: 50px;
+}
+/* Đảm bảo cuộn mượt mà và đúng vị trí */
+html {
+    scroll-behavior: smooth;
+}
+/* Fix cho video trong Film Making */
+.lazy-video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+/* Điều chỉnh tab-pane */
+.tab-pane {
+    padding-top: 20px;
+}
+.tab-pane {
+    display: none; /* Ẩn các tab không cần thiết */
+}
+.tab-pane.active {
+    display: block; /* Chỉ hiển thị tab đang được chọn */
+}
+.container3 {
+    padding: 50px;
+}
+.row2 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin: 0 -15px;
+}
+.item3 {
+    background-color: #FEDB8A;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: calc(23%);
+    margin: 0 1%;
+    box-sizing: border-box;
+    display: flex; /* Để căn chỉnh link sang phải */
+    flex-direction: column; /* Sắp xếp nội dung theo chiều dọc */
+    justify-content: space-between; /* Đẩy link xuống dưới cùng */
+}
+.item-content3 h1, .item-content3 h3, .item-content3 p { /* chỉnh margin các thẻ h1, h3, p */
+    margin-bottom: 10px;
+}
+.link-container3 { /* Style cho khung chứa link */
+    background-color: #f0c85b; /* Màu đậm hơn một chút */
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-align: right; /* Căn phải nội dung trong khung */
+    margin-top: 10px; /* tạo khoảng cách với các nội dung bên trên */
+}
+.item-content3 a {
+    color: #a0522d;
+    text-decoration: none;
+}
+.item3:hover {
+    transform: translateY(-5px);
+}
+@media (max-width: 767.98px) {
+    .row2 {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
+    .item3 {
+        width: 98%;
+        margin: 1% 0;
+    }
+}
+.container5 {
+    display: flex;
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    align-items: center; /* Canh giữa theo chiều dọc */
+}
+.button5 {
+    display: inline-flex; /* Để căn giữa nội dung theo cả chiều ngang và chiều dọc */
+    align-items: center; /* Canh giữa theo chiều dọc */
+    justify-content: center; /* Canh giữa theo chiều ngang */
+    background-color: #FEDB8A; /* Màu hồng như trong hình */
+    color: black; /* Màu chữ đen */
+    padding: 10px 20px; /* Khoảng cách bên trong nút */
+    border: none; /* Loại bỏ viền mặc định của nút */
+    border-radius: 10px; /* Bo góc */
+    font-size: 16px; /* Kích thước chữ */
+    cursor: pointer; /* Biến con trỏ chuột thành hình bàn tay khi di vào nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu mượt mà */
+}
+.button5 i {
+    font-size: 32px; /* Điều chỉnh kích thước icon */
+    margin-left: 10px; /* Khoảng cách giữa chữ và icon */
+    color: hsla(27, 56%, 50%, 1.00);
+}
+.button5:hover {
+    background-color: #FFC85A; /* Màu đậm hơn khi di chuột vào */
+}
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Hiển thị các thành phần theo cột */
+    justify-content: center; /* Canh giữa theo chiều dọc */
+    align-items: center; /* Canh giữa theo chiều ngang */
+    gap: 30px; /* Khoảng cách giữa các mục */
+    padding: 50px;
+}
+/* Form Section */
+.form-section form {
+    background-color: #FEDB8A;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px; /* Giới hạn chiều rộng form */
+}
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #241811;
+    border-radius: 4px;
+    font-size: 14px;
+}
+form button {
+    background-color: #241811;
+    color: #FEDB8A;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+form button:hover {
+    background-color: #5E3F2C;
+}
+/* Info Section */
+.info-section {
+    text-align: center;
+}
+.info-section h3 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #000;
+}
+/* Social Links */
+.social-links {
+    display: flex;
+    flex-direction: column; /* Hiển thị icon theo cột */
+    gap: 15px;
+}
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEDB8A;
+    color: #C57838;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin: 0 auto; /* Căn giữa icon */
+}
+.social-icon:hover {
+    background-color: #313131;
+    color: #fff;
+}
+.contact-info {
+    text-align: center;
+}
+.contact-item {
+    color: #FEDB8A;
+    margin: 10px 0;
+}
+/* Mặc định dành cho desktop */
+.contact-item.office {
+    font-size: 25px;
+}
+.contact-item.email {
+    font-size: 20px;
+}
+/* Media query cho điện thoại (màn hình nhỏ hơn 768px) */
+@media (max-width: 768px) {
+    .contact-item.office {
+        font-size: 15px; /* Giảm kích thước chữ cho nội dung "MY OFFICE" */
+    }
+    .contact-item.email {
+        font-size: 10px; /* Giảm kích thước chữ cho nội dung "EMAIL ME" */
+    }
+}
+/* Đảm bảo video không bị tràn và giữ tỷ lệ */
+.responsive-video {
+    width: 100%; /* Video chiếm toàn bộ chiều rộng container */
+    max-width: 300px; /* Đặt kích thước tối đa của video */
+    height: auto; /* Tự động giữ tỷ lệ */
+    border-radius: 10px; /* Tùy chọn bo góc */
+}
+/* Căn giữa hoàn hảo cho video */
+.img-hover-container {
+    display: flex;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    width: 100%;
+    height: 100%; /* Đảm bảo chiếm toàn bộ chiều cao nếu cần */
+}
+/* Đảm bảo container không bị tràn */
+.col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-width: 768px) {
+    .responsive-video {
+        max-width: 200px; /* Kích thước nhỏ hơn trên màn hình nhỏ */
+    }
+}
